@@ -1,9 +1,9 @@
 angular.module('Schedule', ['ui.router'])
 .factory('tableFactory', [function(){
   var o = {
-    table: [5][30][],
+    table: [5][30][100],
     daysToAdd: [5],
-    timeStrings = {"7:00",
+    timeStrings: ["7:00",
       "7:30",
       "8:00",
       "8:30",
@@ -34,7 +34,7 @@ angular.module('Schedule', ['ui.router'])
       "9:00",
       "9:30",
       "10:00"
-    }
+    ]
   };
   return o;
 }])
