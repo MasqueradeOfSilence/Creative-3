@@ -1,7 +1,7 @@
 angular.module('Schedule', ['ui.router'])
 .factory('tableFactory', [function(){
   var o = {
-    table: [5][28][],
+    table: [5][30][],
     daysToAdd: [5],
     timeStrings = {"7:00",
       "7:30",
@@ -32,7 +32,8 @@ angular.module('Schedule', ['ui.router'])
       "8:00",
       "8:30",
       "9:00",
-      "9:30"
+      "9:30",
+      "10:00"
     }
   };
   return o;
@@ -56,29 +57,52 @@ angular.module('Schedule', ['ui.router'])
   $scope.addClass = function(){
     if($scope.formContent === '') { return; }
 
-    daysToAdd[0] = $scope.formContent.monday;
-    daysToAdd[1] = $scope.formContent.tuesday;
-    daysToAdd[2] = $scope.formContent.wednesday;
-    daysToAdd[3] = $scope.formContent.thursday;
-    daysToAdd[4] = $scope.formContent.friday;
+    daysToAdd[0] = $scope.monday;
+    daysToAdd[1] = $scope.tuesday;
+    daysToAdd[2] = $scope.wednesday;
+    daysToAdd[3] = $scope.thursday;
+    daysToAdd[4] = $scope.friday;
 
     for (var i = 0; i < daysToAdd.length; i++) {
       if(daysToAdd[i] == true) {
+        var startIndex = 0;
+        var endIndex = 29;
+        for (var t = 0; t < timeStrings.length; t++) {
+          if (timeStrings[t] == $scope.startTime) {
+            startIndex = t;
+          }
+          if (timeStrings[t] == $scope.endTime) {
+            endIndex = t;
+          }
+        }
 
+
+
+        $scope.table[i][startIndex].push({
+          title: $scope.formContent
+        });
+        for (var remainingCells = startIndex + 1; remainingCells < endIndex; remainingCells++) {
+          $scope.table[i][remainingCells].push({});
+        }
       }
     }
 
+
+/*
     $scope.table.push({
       title: $scope.formContent,
       upvotes: 0,
       comments: []
     });
     $scope.title = '';
-  };
 
+    */
+  };
+/*
   $scope.incrementUpvotes = function(post) {
     //post.upvotes += 1;
   };
+  */
 
 }
 ])
