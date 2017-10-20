@@ -14,7 +14,7 @@
     </div>
   </div>
   Class schedule.
-	
+
 	<!-- Form that allows the user to add a class. -->
 	<div class = "row">
 	<div class = "col-md-6 col-md-offset-3">
@@ -27,17 +27,17 @@
       	<button type="submit">Submit</button>
 	</form>
 
-	<select ng-model="selectedTimeSlot" placeholder="Start Time" ng-repeat="x as x for x in timeStrings">
+	<select ng-model="selectedTimeSlot" placeholder="Start Time" ng-repeat="x in timeStrings track by $index">
 	<option value="" selected="selected">Choose a start time</option>
-	
+
 	</select>
 
-	<div ng-repeat="y as y for y in timeStrings">
-	{{y}} 
+	<div ng-repeat="y in timeStrings track by $index">
+	{{y}}
 	</div>
 
 	<br><br>
-	
+
 	<label>Monday:
 	<input type="checkbox" ng-model="checkboxModel.monday"></input>
 	</label>
