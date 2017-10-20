@@ -1,7 +1,8 @@
 angular.module('Schedule', ['ui.router'])
 .factory('tableFactory', [function(){
   var o = {
-    table: [5][30][100],
+    //table: [5][30][100],
+    table: [],
     daysToAdd: [5],
     timeStrings: ["7:00",
       "7:30",
