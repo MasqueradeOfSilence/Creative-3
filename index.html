@@ -18,13 +18,45 @@
 	<!-- Form that allows the user to add a class. -->
 	<div class = "row">
 	<div class = "col-md-6 col-md-offset-3">
-	<h1> Please add a class. </h1>
+	<h3> Please add a class. </h3>
+	<br>
 
 	<!-- ng-submit will include whatever function we want to occur after the user hits submit. -->
-	<form ng-submit="enterClassInformation()" style = "margin-top30px;">
-      	<input type="text" ng-model="formContent"></input>
+	<form ng-submit="addClass()" style = "margin-top30px;">
+      	<input type="text" ng-model="formContent" placeholder="Class name"></input>
       	<button type="submit">Submit</button>
 	</form>
+
+	<select ng-model="selectedTimeSlot" placeholder="Start Time" ng-repeat="x in timeStrings">
+	<option value="" selected="selected">Choose a start time</option>
+	
+	</select>
+
+	<div ng-repeat="x in timeStrings">
+	{{x}} 
+	</div>
+
+	<br><br>
+	
+	<label>Monday:
+	<input type="checkbox" ng-model="checkboxModel.monday"></input>
+	</label>
+
+	<label>Tuesday:
+        <input type="checkbox" ng-model="checkboxModel.tuesday"></input>
+        </label>
+
+	<label>Wednesday:
+        <input type="checkbox" ng-model="checkboxModel.wednesday"></input>
+        </label>
+
+	<label>Thursday:
+        <input type="checkbox" ng-model="checkboxModel.thursday"></input>
+        </label>
+
+	<label>Friday:
+        <input type="checkbox" ng-model="checkboxModel.friday"></input>
+        </label>
 
 	</div>
 	</div>
