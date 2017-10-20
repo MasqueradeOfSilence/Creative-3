@@ -27,14 +27,11 @@
       	<button type="submit">Submit</button>
 	</form>
 
-	<select ng-model="selectedTimeSlot" placeholder="Start Time" ng-repeat="x in timeStrings track by $index">
-	<option value="" selected="selected">Choose a start time</option>
+	<select ng-model="selectedTimeSlot" placeholder="Start Time">
+	<option value="{{x}}" ng-repeat="x in timeStrings track by $index">{{x}}</option>
 
 	</select>
 
-	<div ng-repeat="y in timeStrings track by $index">
-	{{y}}
-	</div>
 
 	<br><br>
 
