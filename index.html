@@ -71,7 +71,24 @@ End Time:
   <th>Friday</th>
 </tr>
 </thead>
+<tr>
+<td ng-repeat="column in table track by $index">
+<table class="table">
+  <tr ng-repeat="row in column track by $index" ng-switch="row.length">
+    <td ng-switch-when="0">&nbsp;</td>
+    <td ng-switch-when="1" class="info">{{row[0].title}}&nbsp;</td>
+    <td ng-switch-default class="danger">{{row[1].title}}&nbsp;</td>
+  </tr>
+</table>
+</td>
+</tr>
 
+</table>
+<table class="table table-bordered">
+  <tr><td>hello</td><td>goodbye</td></tr>
+  <tr><td>hello</td><td>goodbye</td></tr>
+  <tr><td>hello</td><td>goodbye</td></tr>
+</table>
 	</div>
 	</div>
 </body>
