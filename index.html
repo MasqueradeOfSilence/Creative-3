@@ -8,8 +8,8 @@
 </head>
 <body ng-app="Schedule" ng-controller="MainCtrl">
 
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+   <div class="row">
+   <div class="col-md-6 col-md-offset-3">
       <ui-view></ui-view>
     </div>
   </div>
@@ -27,13 +27,13 @@
       	<button type="submit">Submit</button>
 	</form>
 
-	<select ng-model="selectedTimeSlot" placeholder="Start Time" ng-repeat="x in timeStrings">
+	<select ng-model="selectedTimeSlot" placeholder="Start Time" ng-repeat="x as x for x in timeStrings">
 	<option value="" selected="selected">Choose a start time</option>
 	
 	</select>
 
-	<div ng-repeat="x in timeStrings">
-	{{x}} 
+	<div ng-repeat="y as y for y in timeStrings">
+	{{y}} 
 	</div>
 
 	<br><br>
