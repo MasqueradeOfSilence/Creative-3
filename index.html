@@ -17,7 +17,7 @@
 	<!-- Form that allows the user to add a class. -->
 	<div class = "row">
 	<div class = "col-md-6 col-md-offset-3">
-	<h3> Please add a class. </h3>
+	<h3> Class Scheduler </h3>
 	<br>
 
 	<!-- ng-submit will include whatever function we want to occur after the user hits submit. -->
@@ -64,6 +64,7 @@ End Time:
 <table class="table">
   <thead>
     <tr>
+      <th>Time</th>
   <th>Monday</th>
   <th>Tuesday</th>
   <th>Wednesday</th>
@@ -72,6 +73,13 @@ End Time:
 </tr>
 </thead>
 <tr>
+  <td>
+    <table class="table">
+      <tr ng-repeat="t in timeStrings2 track by $index">
+        <td >{{t}}</td>
+      </tr>
+    </table>
+  </td>
 <td ng-repeat="column in table track by $index">
 <table class="table">
   <tr ng-repeat="row in column track by $index" ng-switch="row.length">
@@ -83,11 +91,6 @@ End Time:
 </td>
 </tr>
 
-</table>
-<table class="table table-bordered">
-  <tr><td>hello</td><td>goodbye</td></tr>
-  <tr><td>hello</td><td>goodbye</td></tr>
-  <tr><td>hello</td><td>goodbye</td></tr>
 </table>
 	</div>
 	</div>
