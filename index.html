@@ -13,7 +13,6 @@
       <ui-view></ui-view>
     </div>
   </div>
-  Class schedule.
 
 	<!-- Form that allows the user to add a class. -->
 	<div class = "row">
@@ -25,35 +24,53 @@
 	<form ng-submit="addClass()" style = "margin-top30px;">
       	<input type="text" ng-model="formContent" placeholder="Class name"></input>
       	<button type="submit">Submit</button>
-	</form>
 
-	<select ng-model="selectedTimeSlot" placeholder="Start Time">
+<br><br>
+
+Start Time:
+	<select ng-model="startTime" placeholder="Start Time">
 	<option value="{{x}}" ng-repeat="x in timeStrings track by $index">{{x}}</option>
-
 	</select>
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+End Time:
+  <select ng-model="endTime" placeholder="End Time">
+	<option value="{{x}}" ng-repeat="x in timeStrings track by $index">{{x}}</option>
+	</select>
 
 	<br><br>
 
 	<label>Monday:
-	<input type="checkbox" ng-model="checkboxModel.monday"></input>
+	<input type="checkbox" ng-model="monday"></input>
 	</label>&nbsp;&nbsp;
 
 	<label>Tuesday:
-        <input type="checkbox" ng-model="checkboxModel.tuesday"></input>
+        <input type="checkbox" ng-model="tuesday"></input>
         </label>&nbsp;&nbsp;
 
 	<label>Wednesday:
-        <input type="checkbox" ng-model="checkboxModel.wednesday"></input>
+        <input type="checkbox" ng-model="wednesday"></input>
         </label>&nbsp;&nbsp;
 
 	<label>Thursday:
-        <input type="checkbox" ng-model="checkboxModel.thursday"></input>
+        <input type="checkbox" ng-model="thursday"></input>
       </label>&nbsp;&nbsp;
 
 	<label>Friday:
-        <input type="checkbox" ng-model="checkboxModel.friday"></input>
+        <input type="checkbox" ng-model="friday"></input>
         </label>
+
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+  <th>Monday</th>
+  <th>Tuesday</th>
+  <th>Wednesday</th>
+  <th>Thursday</th>
+  <th>Friday</th>
+</tr>
+</thead>
 
 	</div>
 	</div>
